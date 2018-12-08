@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <title>Robert Half Technology Exercise Page - Bing Long</title>
     <style>
-        .box {
-            position: relative;
-        }
         .lightblue_box {
+            position: relative;
             background-color: lightblue;
             z-index: 0;
             width: 250px;
@@ -15,8 +13,8 @@
         }
         .yellow_box {
             position: absolute;
-            left: 1.3cm;
-            top: 1.3cm;
+            left: 50px;
+            top: 50px;
             z-index: 1;
             background-color: yellow;
             width: 150px;
@@ -30,7 +28,7 @@
 Blue (lightblue) square of 5 units by 5 units, the yellow square is centered vertically and horizontally within the blue square.
 <p/>1 unit = 50px.
 <h3>HTML and CSS:</h3>
-<p><div class="box lightblue_box"><span class="box yellow_box"></span></div>
+<p><div class="lightblue_box"><span class="yellow_box"></span></div>
 </p>
 <h3>HTML5 Canvas:</h3>
 <canvas id="boxInBox" width="250px" height="250px">
