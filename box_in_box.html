@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Robert Half Technology Exercise Page - Bing Long</title>
+    <style>
+        .box {
+            position: relative;
+        }
+        .lightblue_box {
+            background-color: lightblue;
+            z-index: 0;
+            width: 250px;
+            height: 250px;
+        }
+        .yellow_box {
+            position: absolute;
+            left: 1.3cm;
+            top: 1.3cm;
+            z-index: 1;
+            background-color: yellow;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">Robert Half Technology Exercise Page</h1>
+<h2 style="text-align: center">Bing Long</h2>
+Blue (lightblue) square of 5 units by 5 units, the yellow square is centered vertically and horizontally within the blue square.
+<p/>1 unit = 50px.
+<h3>HTML and CSS:</h3>
+<p><div class="box lightblue_box"><span class="box yellow_box"></span></div>
+</p>
+<h3>HTML5 Canvas:</h3>
+<canvas id="boxInBox" width="250px" height="250px">
+</canvas>
+<script>
+    var canvas = document.getElementById("boxInBox");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "lightblue";
+    ctx.fillRect(0,0,250,250);
+    ctx.fillStyle = "yellow";
+    ctx.fillRect(50,50,150,150);
+</script>
+
+</body>
+</html>
