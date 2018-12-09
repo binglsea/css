@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Robert Half Technology Exercise Page (Voter)- Bing Long</title>
+    <style>
+        .iam {
+            text-align: center;
+            font-size: 30px;
+            font-family: Verdana, sans serif;
+            font-weight: bold;
+        }
+        .gender {
+            text-align: center;
+            font-size: 30px;
+            font-family: Helvetica, sans serif;
+            font-weight: bold;
+            font-stretch: ultra-condensed;
+            opacity: 0.4;
+        }
+        th, td {
+            padding: 15px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#fvotenum").load("female_votes.txt");
+            $("#mvotenum").load("male_votes.txt");
+            
+            //Sleep a bit to wait for loading
+            alert("Sleep");
+            var fv = parseFloat($("#fvotenum").text());
+       		var mv = parseFloat($("#mvotenum").text());
+       		//alert(fv);
+       		var tv = fv + mv;
+       		var fpv = (fv / tv) * 100;
+       		var mpv = (mv / tv) * 100;
+        	$("#fpercent").text(fpv.toString() + "%");
+        	$("#mpercent").text(mpv.toString() + "%");
+        	if (fv > mv) {
+        		$("#fpercent").css("color", "green");
+        		$("#mpercent").css("color", "red");
+        	}
+        	else {
+        		$("#fpercent").css("color", "red");
+        		$("#mpercent").css("color", "green");
+        	}
+        	
+        	$("#fvote").click(function() {
+        		fv += 1;
+        		$("#fvotenum").text(fv.toString());
+        		tv = fv + mv;
+       			fpv = (fv / tv) * 100;
+       			mpv = (mv / tv) * 100;
+        		$("#fpercent").text(fpv.toString() + "%");
+        		$("#mpercent").text(mpv.toString() + "%");
+        		if (fv > mv) {
+        			$("#fpercent").css("color", "green");
+        			$("#mpercent").css("color", "red");
+        		}
+        		else {
+        			$("#fpercent").css("color", "red");
+        			$("#mpercent").css("color", "green");
+        		}
+        	});
+        	
+        	$("#mvote").click(function() {
+        		mv += 1;
+        		$("#mvotenum").text(mv.toString());
+        		tv = fv + mv;
+       			fpv = (fv / tv) * 100;
+       			mpv = (mv / tv) * 100;
+        		$("#fpercent").text(fpv.toString() + "%");
+        		$("#mpercent").text(mpv.toString() + "%");
+        		if (fv > mv) {
+        			$("#fpercent").css("color", "green");
+        			$("#mpercent").css("color", "red");
+        		}
+        		else {
+        			$("#fpercent").css("color", "red");
+        			$("#mpercent").css("color", "green");
+        		}
+        	});
+
+       	});
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">Robert Half Technology Exercise Page - Voter</h1>
+<h3 style="text-align: center">Page created by Bing Long</h3>
+
+<p class="iam">I am...</p>
+<table align="center" style="text-align: center" cellpadding="20">
+    <tr class="gender">
+        <td>FEMALE</td><td>MALE</td>
+    </tr>
+    <tr>
+        <td><img src="female.png" alt="Female"/></td>
+        <td><img src="male.png" alt="male"/></td>
+    </tr>
+    <tr>
+        <td><span id="fpercent"></span> (<span id="fvotenum"></span>)</td>
+        <td><span id="mpercent"></span> (<span id="mvotenum"></span>)</td>
+    </tr>
+    <tr>
+        <td><input id="fvote" type="image" src="vote.png" /></td>
+        <td><input id="mvote" type="image" src="vote.png" /></td>
+    </tr>
+</table>
+
+<p></p>
+Back to the <a href="index.html">Box-in-Box</a> page.
+
+
+</body>
+</html>
